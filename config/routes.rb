@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+
   resources :reviews
   resources :sneakers
   resources :brands
