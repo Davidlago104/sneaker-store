@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stars: 1
+  recommendation: false
+  title: MyString
+  thoughts: MyString
+  user: one
+  sneakers: one
+
+two:
+  stars: 1
+  recommendation: false
+  title: MyString
+  thoughts: MyString
+  user: two
+  sneakers: two
