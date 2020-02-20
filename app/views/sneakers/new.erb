@@ -1,6 +1,6 @@
 <h1>Add a sneaker!</h1>
 
-<%= form_for(:sneaker) do |f|%>
+<%= form_for(@sneaker) do |f|%>
   <%= f.label :name%>
   <%=f.text_field :name%>
 
@@ -11,13 +11,20 @@
   <%=f.text_field :description%>
   <br>
   <p>
-    Select a brand
+    Select a brand<br>
+    <%= f.collection_select :brand_id, Brand.all, :id, :name %>
   </p>
 
   <p>
-    add a new brand
+    add a new brand<br>
+  <%= f.fields_for :brand do |b| %>
+  <%= b.label :name %>
+  <%= b.text_field :name%>
+  <br>
+  <%= b.label :description%>
+  <%= b.text_field :description%>
+  <% end %>
   </p>
-  
   <br>
   <%= f.submit "Log in!"%>
 <% end %>
