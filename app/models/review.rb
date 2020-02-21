@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
   belongs_to :user
-  belongs_to :sneakers
+  belongs_to :sneakers, optional: true
 end

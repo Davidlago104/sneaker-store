@@ -6,4 +6,5 @@ class Sneaker < ApplicationRecord
   has_many :users, through: :reviews
 
   accepts_nested_attributes_for :brand
+
 end

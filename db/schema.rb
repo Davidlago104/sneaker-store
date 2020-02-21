@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 2020_02_17_193341) do
     t.string "title"
     t.string "thoughts"
     t.integer "user_id"
-    t.integer "sneakers_id"
+    t.integer "sneaker_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["sneakers_id"], name: "index_reviews_on_sneakers_id"
+    t.index ["sneaker_id"], name: "index_reviews_on_sneaker_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
