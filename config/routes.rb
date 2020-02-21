@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :reviews
   resources :sneakers do
-    resources :reviews, only: [:index, :new]
+    resources :reviews, only: [:new, :index]
   end
   resources :brands
   resources :users

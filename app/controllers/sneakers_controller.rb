@@ -15,6 +15,10 @@ class SneakersController < ApplicationController
     end
   end
 
+  def index
+    @sneakers = Sneaker.all
+  end
+
   private
 
   def sneaker_params

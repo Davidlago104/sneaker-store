@@ -1,1 +1,6 @@
 <h1>All of the sneakers so far!</h1>
+
+<% @sneakers.each do |s|%>
+<%= link_to "write a review", new_sneaker_review_path(s.id)%>
+<%= s.name %><br>
+<% end %>
