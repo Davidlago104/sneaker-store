@@ -6,6 +6,12 @@ class ReviewsController < ApplicationController
   end
 
   def index
+    if params[:sneaker_id] #nested
+      @sneakers = Sneaker.find_by_id(params[:sneaker_id])
+      @reviews = @sneakers.reviews
+    else
+      @reviews = Review.all #everything else
+    end
   end
 
   def create
