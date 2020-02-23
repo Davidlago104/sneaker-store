@@ -1,8 +1,11 @@
 class ReviewsController < ApplicationController
 
   def new
-    @sneaker = Sneaker.find_by_id(params[:sneaker_id])
-    @review = @sneaker.reviews.build
+    if @sneaker = Sneaker.find_by_id(params[:sneaker_id])
+      @review = @sneaker.reviews.build
+    else
+      @review = Review.new
+    end
   end
 
   def index

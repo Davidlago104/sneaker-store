@@ -7,4 +7,5 @@ class Sneaker < ApplicationRecord
 
   accepts_nested_attributes_for :brand
 
+  validates :name, presence: true
 end
