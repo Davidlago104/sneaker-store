@@ -4,7 +4,6 @@ class CreateSneakers < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :description
       t.integer :price
-      t.belongs_to :brand, foreign_key: true
       t.belongs_to :user, foreign_key: true
 
       t.timestamps

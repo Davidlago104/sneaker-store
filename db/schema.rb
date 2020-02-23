@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_02_17_193341) do
 
-  create_table "brands", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "stars"
     t.boolean "recommendation"
@@ -36,11 +29,9 @@ ActiveRecord::Schema.define(version: 2020_02_17_193341) do
     t.string "name"
     t.string "description"
     t.integer "price"
-    t.integer "brand_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["brand_id"], name: "index_sneakers_on_brand_id"
     t.index ["user_id"], name: "index_sneakers_on_user_id"
   end
 

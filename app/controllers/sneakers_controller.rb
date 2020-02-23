@@ -2,7 +2,6 @@ class SneakersController < ApplicationController
 
   def new
     @sneaker = Sneaker.new
-    @sneaker.build_brand
   end
 
   def create
@@ -22,6 +21,6 @@ class SneakersController < ApplicationController
   private
 
   def sneaker_params
-    params.require(:sneaker).permit(:name, :price, :descrpition, :brand_id, brand_attributes: [:name])
+    params.require(:sneaker).permit(:name, :price, :description)
   end
 end
