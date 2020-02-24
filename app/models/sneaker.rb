@@ -5,9 +5,10 @@ class Sneaker < ApplicationRecord
   has_many :users, through: :reviews
 
 
-  validates :name, presence: true
+  validates :name, uniqueness: true, presence: true
   validates :name, length: {minimum: 3}
-  validates :name, uniqueness: true
+  
+  validates :description, presence: true
 
   validate :price_range
 
