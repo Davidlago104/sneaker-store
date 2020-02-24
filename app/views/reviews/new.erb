@@ -4,6 +4,8 @@
   <h1>Create a review</h1>
 <% end %>
 
+<%= render partial: 'layouts/error', locals: {thing: @review} %>
+
 
 <%= form_for(@review) do |f| %>
 
