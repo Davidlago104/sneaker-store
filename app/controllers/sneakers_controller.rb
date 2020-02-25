@@ -15,7 +15,7 @@ class SneakersController < ApplicationController
   end
 
   def index
-    @sneakers = Sneaker.all
+    @sneakers = Sneaker.all.ordered
   end
 
   private
