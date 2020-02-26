@@ -11,6 +11,10 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end
 
+  def omniauth
+    byebug
+  end
+
   def create
     @user = User.find_by(username: params[:user][:username])
     if @user.try(:authenticate, params[:user][:password])
