@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
   end
 
   def omniauth
-    byebug
+
   end
 
   def create
