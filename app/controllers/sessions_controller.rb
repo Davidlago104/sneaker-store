@@ -11,11 +11,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # if params[:login]
-    #   @user = User.github_login(auth)
-    #   session[:user_id] = @user.id
-    #   redirect_to user_path(@user)
-    # else
       @user = User.find_by(username: params[:user][:username])
 
       if @user && @user.authenticate(password: params[:user][:password])
