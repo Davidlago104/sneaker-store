@@ -1,5 +1,14 @@
-<h1>All Reviews</h1>
+<% if @sneaker%>
+  <h1>Review for @sneaker.name %></h1>
+<% else %>
+  <h1>All Reviews</h1>
+<% end %>
+
 <%@reviews.each do |r|%>
+<li>
+
+  <%= r.sneaker.name%>
   <%= r.title %><br>
-  <%= r.stars %>
+  stars <%= r.stars %>
+</li><br>
 <% end %>
