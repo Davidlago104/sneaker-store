@@ -5,12 +5,16 @@
 <%= form_for(@sneaker) do |f|%>
   <%= f.label :name%>
   <%=f.text_field :name%>
-
+  <br>
   <%= f.label :price%>
   <%= f.number_field :price%>
   <br>
   <%=f.label :description%>
   <%=f.text_field :description%>
   <br>
+  <%= f.label :sneaker_picture%>
+  <%= f.file_field :sneaker%>
+  <br>
+
   <%= f.submit "Create!"%>
 <% end %>

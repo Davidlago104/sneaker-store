@@ -1,7 +1,7 @@
 <h1>All of the sneakers so far!</h1>
 
 <% @sneakers.each do |sneaker|%>
-  <%= sneaker.name %><br>
-  <%= sneaker.description %><br>
-  <%= link_to "write a review", new_sneaker_review_path(sneaker.id)%>
+  <%= sneaker.name %>
+  <%= link_to "write a review", new_sneaker_review_path(sneaker.id)%><br>
+  <%= sneaker.description %>
 <% end %>
