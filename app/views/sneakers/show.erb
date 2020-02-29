@@ -1,6 +1,8 @@
 <h1> Sneaker added! <%= @sneaker.name %> </h1>
 
-<!-- <h2><image_tag url_for(@sneaker.sneaker)%></h2> -->
+
+<%= image_tag(@sneaker.sneaker_image) if @sneaker.sneaker_image.attached? %>
+<!-- # <= image_tag url_for(@sneaker.sneaker_image)%> %> -->
 <p><%= @sneaker.description%></p>
 <p>
   Check it out here with the rest of the <%= link_to "sneakers!", sneakers_path %>

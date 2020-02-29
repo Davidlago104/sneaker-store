@@ -1,5 +1,5 @@
 class SneakersController < ApplicationController
-  before_action :set_sneaker, only:[:show, :edit, :update]
+  before_action :set_sneaker, only:[:show]
 
   def new
     @sneaker = Sneaker.new
@@ -23,11 +23,11 @@ class SneakersController < ApplicationController
   private
 
   def sneaker_params
-    params.require(:sneaker).permit(:name, :price, :description)
+    params.require(:sneaker).permit(:name, :price, :description, :sneaker_image)
   end
 
   def set_sneaker
-   @sneaker= Sneaker.find_by(params[:id])
+   @sneaker = Sneaker.find_by(params[:id])
    redirect_to sneakers_path if !@sneaker
  end
 

@@ -2,7 +2,7 @@ class Sneaker < ApplicationRecord
   belongs_to :user, optional: true
   has_many :reviews
   has_many :users, through: :reviews
-  has_one_attached :sneaker
+  has_one_attached :sneaker_image
 
   validates :name, uniqueness: true
   # validates :name, presence: { scope: :review, message}
