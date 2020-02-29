@@ -1,7 +1,8 @@
 <h1>All of the sneakers so far!</h1>
 
 <% @sneakers.each do |sneaker|%>
-  <%= sneaker.name %>
+  <h2><%= sneaker.name %></h2>
+  <%= image_tag(sneaker.sneaker_image)%>
   <%= link_to "write a review", new_sneaker_review_path(sneaker.id)%><br>
   <%= sneaker.description %>
 <% end %>
