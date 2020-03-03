@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="application.css">
+  </head>
     <title>SneakerStore</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+    <h3 class="h3-text">
+    <div class="topnav" type="text/css" href="application.css">
+      <h1>Dave's Sneaker Community</h1><br>
+      <%= link_to "Home Page", root_path%>
+      <%= link_to "Add a sneaker", new_sneaker_path %>
+      <%= link_to "Write a Review", new_review_path %>
+      <%= link_to "All Sneakers", sneakers_path %>
+      <%= link_to "All Reviews", reviews_path %>
+      <%= link_to "Log Out", logout_path, method: :delete %>
+    </div>
+  </h3>
      <div class="container">
        <% flash.each do |key, value| %>
          <div class="alert alert-<%= key %>"><%= value %></div>
        <% end %>
-       <% yield %>
      </div>
-
-  <div class="toolbar">
-    <%= link_to "Home Page", root_path%>
-    <%= link_to "Add a sneaker", new_sneaker_path %>
-    <%= link_to "Write a Review", new_review_path %>
-    <%= link_to "All Sneakers", sneakers_path %>
-    <%= link_to "All Reviews", reviews_path %>
-    <%= link_to "Log Out", logout_path, method: :delete %>
-  </div>
 
   <body>
     <%= yield %>
