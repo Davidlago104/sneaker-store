@@ -19,12 +19,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = current_user.reviews.build(review_params)
-    if @review.save
+    if logged_in?
+      @review = current_user.reviews.build(review_params)
 
-      redirect_to review_path(@review)
+      @review.save
+        redirect_to review_path(@review)
     else
-      render :new
+      # flash[:alert] = "You're not logged in to review sneakers!"
+      redirect_to '/'
     end
   end
 
