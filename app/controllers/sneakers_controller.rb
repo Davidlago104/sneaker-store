@@ -10,6 +10,8 @@ class SneakersController < ApplicationController
     @sneaker.user_id = session[:user_id]
 
     if @sneaker.save
+      @sneaker.sneaker_image.purge
+      @sneaker.sneaker_image.attach(params[:sneaker][:sneaker_image])
       redirect_to sneaker_path(@sneaker)
     else
       render :new
@@ -23,11 +25,11 @@ class SneakersController < ApplicationController
   private
 
   def sneaker_params
-    params.require(:sneaker).permit(:name, :price, :description, :sneaker_image)
+    params.require(:sneaker).permit(:name, :price, :description)
   end
 
   def set_sneaker
-   @sneaker = Sneaker.find_by(params[:id])
+   @sneaker = Sneaker.find(params[:id])
    redirect_to sneakers_path if !@sneaker
  end
 

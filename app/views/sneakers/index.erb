@@ -2,7 +2,9 @@
 
 <% @sneakers.each do |sneaker|%>
   <h2><%= sneaker.name %></h2>
-  <%= image_tag(sneaker.sneaker_image)%>
+  <% if sneaker.sneaker_image.attached? %>
+    <%= image_tag(sneaker.sneaker_image)%>
+  <% end %>
   <%= link_to "write a review", new_sneaker_review_path(sneaker.id)%><br>
   <%= sneaker.description %>
 <% end %>

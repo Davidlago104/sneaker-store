@@ -1,7 +1,9 @@
 <h1> Sneaker added! <%= @sneaker.name %> </h1>
 
+<% if @sneaker.sneaker_image.attached? %>
+  <%= image_tag(@sneaker.sneaker_image) if @sneaker.sneaker_image.attached? %>
+<% end %>
 
-<%= image_tag(@sneaker.sneaker_image) if @sneaker.sneaker_image.attached? %>
 <!-- # <= image_tag url_for(@sneaker.sneaker_image)%> %> -->
 <p><%= @sneaker.description%></p>
 <p>

@@ -23,7 +23,8 @@ class ReviewsController < ApplicationController
       @review = current_user.reviews.build(review_params)
 
       @review.save
-        redirect_to review_path(@review)
+      
+      redirect_to review_path(@review)
     else
       flash[:error] = "You're not logged in to review sneakers!"
       redirect_to '/'
