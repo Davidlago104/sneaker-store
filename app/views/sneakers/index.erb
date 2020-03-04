@@ -1,3 +1,5 @@
+<div class= "h1" style="text-align:center;">
+
 <h1>All of the sneakers so far!</h1>
 
 <% @sneakers.each do |sneaker|%>
@@ -8,3 +10,5 @@
   <%= link_to "write a review", new_sneaker_review_path(sneaker.id)%><br>
   <%= sneaker.description %>
 <% end %>
+
+</div>

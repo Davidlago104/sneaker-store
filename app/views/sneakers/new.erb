@@ -1,3 +1,5 @@
+<div class="h1">
+
 <h1>Add a sneaker!</h1>
 
 <%= render partial: 'layouts/error', locals: {thing: @sneaker} %>
@@ -6,15 +8,21 @@
   <%= f.label :name%>
   <%=f.text_field :name%>
   <br>
+  <br>
   <%= f.label :price%>
   <%= f.number_field :price%>
+  <br>
   <br>
   <%=f.label :description%>
   <%=f.text_field :description%>
   <br>
+  <br>
   <%= f.label :sneaker_picture%>
   <%= f.file_field :sneaker_image%>
+  <br>
   <br>
 
   <%= f.submit "Create!"%>
 <% end %>
+
+</div>

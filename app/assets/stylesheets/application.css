@@ -13,13 +13,22 @@
  *= require_tree .
  *= require_self
  */
-
+body {
+  background-image: url(https://i.redd.it/1tnha54g8h011.jpg);
+}
  .h3-text {
    color:rgb(114,280,192);
  }
- 
+
  h3 {
    background-color: #F1F1F1;
+   text-align: center;
+   padding: 20px;
+ }
+
+ .h1 {
+   background-color: #6b5b95;
+   border: none;
    text-align: center;
    padding: 20px;
  }
@@ -42,4 +51,24 @@
 .topnav a:hover {
   background-color: #ddd;
   color: black;
+}
+
+.form-submit-button {
+
+background: #0066A2;
+
+color: white;
+
+border-style: outset;
+
+border-color: #0066A2;
+
+height: 50px;
+
+width: 100px;
+
+font: bold 15px arial, sans-serif;
+
+text-shadow:none;
+
 }
