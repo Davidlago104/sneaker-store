@@ -3,9 +3,9 @@
   <h1>Review for @sneaker.name %></h1>
 <% else %>
   <h1>All Reviews</h1>
-  <%@reviews.each do |review|%>
+  
+  <% @reviews.each do |review| %>
   <li>
-
     <%= review.title %><br>
     stars <%= review.stars %>
   </li><br>

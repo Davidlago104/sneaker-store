@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  # before_action :set_sneaker, only:[:show]
+  # before_action :review only:[:show]
 
   def new
     if @sneaker = Sneaker.find_by_id(params[:sneaker_id])
@@ -19,15 +19,16 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    if logged_in?
-      @review = current_user.reviews.build(review_params)
+    @review = current_user.reviews.build(review_params)
 
-      @review.save
-      
+    if logged_in? && @review.save
+
       redirect_to review_path(@review)
+
     else
-      flash[:error] = "You're not logged in to review sneakers!"
-      redirect_to '/'
+      # flash[:error] = "Something went wrong! Please check again if youre logged in
+      # or if your stars are within 1-5"
+      render :new
     end
   end
 
@@ -37,9 +38,9 @@ class ReviewsController < ApplicationController
 
   private
 
-  # def set_sneaker
-  #  @sneaker = Sneaker.find_by(params[:id])
-  #  redirect_to sneakers_path if !@sneaker
+  # def set_review
+  #  @review = User.find(params[:id])
+  #  redirect_to sneakers_path if !@review
   # end
 
   def review_params
