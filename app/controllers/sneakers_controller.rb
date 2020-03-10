@@ -7,9 +7,9 @@ class SneakersController < ApplicationController
 
   def create
     @sneaker = Sneaker.new(sneaker_params)
-    @sneaker.user_id = session[:user_id]
 
     if @sneaker.save
+      @sneaker.user_id = session[:user_id]
       @sneaker.sneaker_image.purge
       @sneaker.sneaker_image.attach(params[:sneaker][:sneaker_image])
       redirect_to sneaker_path(@sneaker)
