@@ -1,7 +1,6 @@
 <div class="h1">
 <%= render partial: 'layouts/error', locals: {thing: @review} %>
 
-  <h1 style="color:red">Be sure to be logged in when writing a review! You cannot write a review if you're not logged in!</h1>
   <%= form_for(@review) do |f| %>
 
   <% if params[:sneaker_id]%>

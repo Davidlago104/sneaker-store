@@ -7,7 +7,7 @@ class SneakersController < ApplicationController
 
   def create
     @sneaker = Sneaker.new(sneaker_params)
-
+    #allows the sneaker to be saved as well as posting images for that sneaker
     if @sneaker.save
       @sneaker.user_id = session[:user_id]
       @sneaker.sneaker_image.purge
@@ -18,7 +18,7 @@ class SneakersController < ApplicationController
     end
   end
 
-  def index
+  def index #all of the sneakers in order by the alphabet
     @sneakers = Sneaker.all.ordered
   end
 
