@@ -1,5 +1,6 @@
 class SneakersController < ApplicationController
   before_action :set_sneaker, only:[:show]
+  before_action :logged_in?, only:[:new, :create]
 
   def new
     @sneaker = Sneaker.new
