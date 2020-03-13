@@ -34,4 +34,4 @@ class SneakersController < ApplicationController
    redirect_to sneakers_path if !@sneaker
  end
 
-end
+end #end of class

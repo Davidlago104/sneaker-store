@@ -25,4 +25,5 @@ class UsersController < ApplicationController
   def user_params #takes the info from a user and perserves it
     params.require(:user).permit(:username, :email, :password)
   end
-end
+
+end #end of class

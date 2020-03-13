@@ -8,4 +8,4 @@ class Review < ApplicationRecord
   validates :title, presence: true
   validates :thoughts, presence: true
 
-end
+end #end of class

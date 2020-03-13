@@ -5,7 +5,6 @@ class Sneaker < ApplicationRecord
   has_one_attached :sneaker_image
 
   validates :name, uniqueness: true
-  # validates :name, presence: { scope: :review, message}
   validates :name, length: {minimum: 3}
 
   validates :description, presence: true
@@ -17,7 +16,6 @@ class Sneaker < ApplicationRecord
   scope :pricing, -> { where("price < 500") }
   scope :over_price, -> { where("price > 500") }
 
-  # scope :jordan_1, -> { where("name = jordan 1") } #doesn't work yet
 
   validate :price_range
 
@@ -29,4 +27,4 @@ class Sneaker < ApplicationRecord
     end
   end
 
-end
+end #end of class
