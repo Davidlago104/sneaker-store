@@ -4,10 +4,12 @@
   <%= form_for(@review) do |f| %>
 
   <% if params[:sneaker_id]%>
+    <%= f.hidden_field :sneaker_id%>
     <h1>Add a review for <%= @sneaker.name%></h1>
   <% else %>
     <h1>Create a review</h1>
-  <%= f.collection_select :sneaker_id, Sneaker.all, :id, :name%>
+    <%= f.label :sneaker_id, "Please Select a Sneaker"%>
+    <%= f.collection_select :sneaker_id, Sneaker.all, :id, :name, include_blank: true%>
   <br>
   <br>
   <% end %>
@@ -16,7 +18,7 @@
   <%= f.number_field :stars, min:0, max:10%>
   <br>
   <br>
-  <%= f.label :recommend? %>
+  <%= f.label :recommend?%>
   <%= f.check_box :recommendation%>
   <br>
   <br>
@@ -28,8 +30,6 @@
   <br>
   <br>
   <%= f.text_area :thoughts%>
-
-  <%= f.hidden_field :sneaker_id %>
   <br>
   <br>
     <%= f.submit "add your review"%>
