@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
 
-  get '/auth/github/callback' => 'sessions#omniauth'
+  get '/auth/:github/callback' => 'sessions#create'
 
 
 
@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   resources :sneakers do
     resources :reviews, only: [:new, :index, :show]
   end
-  resources :users, only: [:show]
+  resources :users, only: [:new, :create, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

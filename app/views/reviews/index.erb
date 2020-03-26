@@ -1,15 +1,14 @@
 <div class="h1">
 <% if @sneaker%>
-  <h1>Review for @sneaker.name %></h1>
+  <h1>Review for <%= @sneaker.name %></h1>
 <% else %>
   <h1>All Reviews</h1>
-  
+<% end %>
+
   <% @reviews.each do |review| %>
   <li>
-    <%= review.title %><br>
-    stars <%= review.stars %>
+    <%= review.sneaker.name %>: <%= link_to review.title, review_path(review)%>  - <%=review.stars%><br>
   </li><br>
-  <% end %>
 <% end %>
 
 </div>

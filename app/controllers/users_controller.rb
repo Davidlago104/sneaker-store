@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create #creates a user then automatically logs them in so they can acess everything
-    @user = User.new(user_params)
+    @user = User.create(user_params)
     if @user.save
       session[:user_id] = @user.id
       flash[:congrats] = "Welcome to the community!"
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   private
 
   def user_params #takes the info from a user and perserves it
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :password)
   end
 
 end #end of class
