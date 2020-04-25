@@ -11,10 +11,10 @@ class ReviewsController < ApplicationController
 
   def create
     @review = current_user.reviews.build(review_params)
-
+    # @review = current_user.sneaker_reviews.build(review_params)
     if @review.save
 
-      redirect_to review_path(@review)
+      redirect_to sneaker_reviews_path(@review)
     else
       render :new
     end

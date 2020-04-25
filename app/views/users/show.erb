@@ -1,5 +1,9 @@
 <div class="h1">
 
 <h1> Welcome <%= @user.username %></h1>
-  
+
+<h3>All of the sneakers you've added!</h3>
+    <% @user.sneakers.each do |s| %>
+    <%=s.name%><br>
+    <%end %>
 </div>

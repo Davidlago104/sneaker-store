@@ -7,7 +7,7 @@
 
   <% @reviews.each do |review| %>
   <li>
-    <%= review.sneaker.name %>: <%= link_to review.title, review_path(review)%>  - <%=review.stars%><br>
+    <%= review.sneaker.name %>: <%= link_to review.title, sneaker_review_path(id: review.id)%>  - <%=review.stars%><br>
   </li><br>
 <% end %>
 

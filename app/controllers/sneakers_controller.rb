@@ -21,6 +21,7 @@ class SneakersController < ApplicationController
 
   def index #all of the sneakers in order by the alphabet
     @sneakers = Sneaker.all.ordered
+    @low_price = Sneaker.pricing
   end
 
   private
@@ -31,7 +32,8 @@ class SneakersController < ApplicationController
 
   def set_sneaker
    @sneaker = Sneaker.find(params[:id])
-   redirect_to sneakers_path if !@sneaker
+   # redirect_to sneakers_path if !@sneaker
+   redirect_to users_path if !@sneaker
  end
 
 end #end of class

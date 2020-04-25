@@ -14,7 +14,7 @@ class Sneaker < ApplicationRecord
   end
 
   scope :pricing, -> { where("price < 500") }
-  scope :over_price, -> { where("price > 500") }
+  # scope :over_price, -> { where("price > 500") }
 
 
   validate :price_range

@@ -1,11 +1,12 @@
 <div class="h1">
 <%= render partial: 'layouts/error', locals: {thing: @review} %>
 
-  <%= form_for(@review) do |f| %>
+  <%= form_for @review, url: {action: "create"} do |f| %>
 
   <% if params[:sneaker_id]%>
     <%= f.hidden_field :sneaker_id%>
-    <h1>Add a review for <%= @sneaker.name%></h1>
+
+    <h1>Add a review for <%= @sneaker.name %></h1>
   <% else %>
     <h1>Create a review</h1>
     <%= f.label :sneaker_id, "Please Select a Sneaker"%>

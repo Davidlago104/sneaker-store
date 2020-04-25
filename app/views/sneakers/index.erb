@@ -11,4 +11,8 @@
   <%= sneaker.description %>
 <% end %>
 
+<h1> Sneakers under $500</h1>
+  <% @low_price.each do |s|%>
+    <h2><%s.name%></h2>
+  <%end%>
 </div>
